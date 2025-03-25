@@ -2,12 +2,16 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.0.0"   // ✅ Specify Node.js 20+
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pages:build":"npx @cloudflare/next-on-pages"
+    "pages:build":"npx @cloudflare/next-on-pages",
+     "deploy": "npm run build && npx wrangler pages deploy .vercel/output"
   },
   "dependencies": {
     "next": "15.2.4",
